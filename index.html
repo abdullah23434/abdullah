@@ -1,134 +1,384 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <title>الأمن السيبراني</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            direction: rtl;
-            margin: 0;
-            background-color: #eef2f7;
-        }
-        header {
-            background: #0f3460;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        header img {
-            margin-top: 15px;
-        }
-        nav {
-            background: #1b1b2f;
-            text-align: center;
-            padding: 15px;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        nav a:hover {
-            color: #ffcc00;
-        }
-        section {
-            padding: 25px 20px;
-        }
-        .box {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-        }
-        section img {
-            display: block;
-            margin: 15px auto;
-        }
-        footer {
-            background: #0f3460;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-        ul li {
-            margin: 8px 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأمن السيبراني - عرض تقديمي</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    background: #0f3460;
+    color: #0f3460;
+}
+
+/* صفحة الغلاف */
+.cover {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f3460, #162447);
+}
+
+.cover h1 {
+    font-size: 70px;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.cover .lock-img {
+    width: 180px;
+    margin-bottom: 50px;
+}
+
+/* الحاوية البيضاء للمحتوى */
+.container {
+    width: 85%;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* كل صفحة */
+section {
+    height: 100vh;
+    page-break-after: always;
+    padding-top: 80px;
+    background: url('https://www.transparenttextures.com/patterns/blueprint.png') repeat;
+    background-size: cover;
+}
+
+/* العناوين */
+h2 {
+    color: #0f3460;
+    border-right: 6px solid #0f3460;
+    padding-right: 12px;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+/* النقاط */
+ul {
+    font-size: 22px;
+    line-height: 2.5;
+    list-style: none;
+    padding-right: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    padding-left: 35px;
+    position: relative;
+}
+
+ul li::before {
+    content: "🔹"; /* أيقونة نقطية عامة */
+    position: absolute;
+    left: 0;
+}
+
+/* الصندوق */
+.box {
+    background: rgba(245, 247, 250, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* الصفحة الأخيرة */
+.final {
+    height: 100vh;
+    background: #0f3460;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.final .student {
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+</style>
 </head>
 <body>
 
-<header>
+<!-- غلاف -->
+<div class="cover">
     <h1>الأمن السيبراني</h1>
-    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="الأمن السيبراني" width="120">
-    <p>تعرف على أهم المخاطر الرقمية ونصائح حماية نفسك على الإنترنت</p>
-</header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="قفل الأمن السيبراني" class="lock-img">
+</div>
 
-<nav>
-    <a href="#intro">المقدمة</a>
-    <a href="#risks">مخاطر الإنترنت</a>
-    <a href="#tips">نصائح الأمان</a>
-    <a href="#awareness">تغيير وعي المستخدم</a>
-</nav>
+<div class="container">
 
-<section id="intro">
-    <h2>💻 مقدمة عن الأمن السيبراني</h2>
-    <div class="box">
-        <p>الأمن السيبراني هو حماية الأنظمة والشبكات والبرامج من الهجمات الرقمية. 
-        تهدف هذه الهجمات عادة إلى الوصول إلى معلومات حساسة أو تعطيل العمليات أو ابتزاز المستخدمين. 
-        مع التوسع الكبير في استخدام الإنترنت والتطبيقات والخدمات الرقمية، أصبح الوعي بالأمن السيبراني أمرًا أساسيًا لكل مستخدم.</p>
-    </div>
+<!-- 1 -->
+<section>
+<h2>📌 مقدمة عن الأمن السيبراني</h2>
+<div class="box">
+<ul>
+<li>الأمن السيبراني يحمي الأنظمة الرقمية</li>
+<li>يشمل حماية الشبكات والبيانات</li>
+<li>يمنع الوصول غير المصرح به</li>
+<li>يحافظ على سرية المعلومات</li>
+<li>يحمي المستخدمين من الاختراق</li>
+<li>أصبح مهمًا مع انتشار الإنترنت</li>
+<li>يشمل الأفراد والشركات</li>
+<li>يستخدم تقنيات حديثة</li>
+<li>يتطور باستمرار</li>
+<li>أساسي في الحياة الرقمية</li>
+</ul>
+</div>
 </section>
 
-<section id="risks">
-    <h2>🚨 أهم مخاطر الإنترنت</h2>
-    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" alt="تحذير" width="100">
-    <div class="box">
-        <p><strong>1- التصيد الاحتيالي (Phishing):</strong> رسائل بريد إلكتروني أو روابط مزيفة تحاول سرقة كلمات المرور والمعلومات الشخصية.</p>
-        <p><strong>2- البرامج الخبيثة والفيروسات:</strong> برامج ضارة يمكنها التجسس على نشاط المستخدم أو سرقة البيانات.</p>
-        <p><strong>3- سرقة الحسابات:</strong> اختراق الحسابات بسبب كلمات مرور ضعيفة أو مشاركة البيانات الشخصية.</p>
-        <p><strong>4- الاحتيال المالي:</strong> مواقع وهمية أو عروض مزيفة تهدف لسرقة المال أو بطاقات الدفع.</p>
-        <p><strong>5- انتهاك الخصوصية:</strong> نشر المعلومات الشخصية أو استغلالها بدون إذن المستخدم.</p>
-        <p><strong>6- التنمر الإلكتروني والمضايقات:</strong> رسائل مسيئة أو تهديدات عبر وسائل التواصل الاجتماعي تؤثر على الصحة النفسية.</p>
-        <p><strong>7- الهجمات على المؤسسات:</strong> مثل هجمات الفدية (Ransomware) التي تشفر بيانات الشركات وتطلب فدية لإعادتها.</p>
-    </div>
+<!-- 2 -->
+<section>
+<h2>⭐ أهمية الأمن السيبراني</h2>
+<div class="box">
+<ul>
+<li>يحمي البيانات الشخصية</li>
+<li>يمنع سرقة الحسابات</li>
+<li>يحافظ على الخصوصية</li>
+<li>يقلل الخسائر المالية</li>
+<li>يحمي الشركات</li>
+<li>يعزز الثقة الرقمية</li>
+<li>يمنع الابتزاز</li>
+<li>يحافظ على سمعة المؤسسات</li>
+<li>يحمي الأجهزة</li>
+<li>ضروري لكل مستخدم</li>
+</ul>
+</div>
 </section>
 
-<section id="tips">
-    <h2>🛡️ نصائح الأمان وحماية نفسك</h2>
-    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="حماية" width="100">
-    <div class="box">
-        <ul>
-            <li>استخدام كلمات مرور قوية وفريدة لكل حساب وتغييرها بانتظام</li>
-            <li>تفعيل المصادقة الثنائية (Two-Factor Authentication) لكل الحسابات المهمة</li>
-            <li>عدم الضغط على روابط أو تحميل ملفات مجهولة المصدر</li>
-            <li>تحديث نظام التشغيل والتطبيقات بانتظام</li>
-            <li>استخدام برامج مكافحة الفيروسات والجدران النارية</li>
-            <li>عدم مشاركة معلومات حساسة عبر الإنترنت إلا إذا كان الموقع موثوقًا</li>
-            <li>التأكد من أمان الشبكات اللاسلكية قبل الاتصال بها</li>
-        </ul>
-    </div>
+<!-- 3 -->
+<section>
+<h2>🚨 مخاطر الإنترنت</h2>
+<div class="box">
+<ul>
+<li>سرقة المعلومات</li>
+<li>اختراق الحسابات</li>
+<li>انتشار الفيروسات</li>
+<li>الاحتيال المالي</li>
+<li>التنمر الإلكتروني</li>
+<li>تسريب البيانات</li>
+<li>التجسس</li>
+<li>اختراق الأجهزة</li>
+<li>انتحال الهوية</li>
+<li>فقدان الخصوصية</li>
+</ul>
+</div>
 </section>
 
-<section id="awareness">
-    <h2>🧠 تأثير التوعية على وعي المستخدم</h2>
-    <div class="box">
-        <p><strong>قبل التوعية:</strong><br>
-        كان المستخدم يتصفح الإنترنت بثقة زائدة، يستخدم كلمات مرور ضعيفة، ولا يتحقق من الروابط أو المواقع.</p>
-
-        <p><strong>بعد التوعية:</strong><br>
-        أصبح المستخدم أكثر حذرًا، يتجنب الروابط المشبوهة، يحمي حساباته، ويفهم أهمية الخصوصية الرقمية. التوعية تمنع فقدان البيانات وتقلل المخاطر الرقمية.</p>
-
-        <p><strong>الخلاصة:</strong> التدريب والتعليم على الأمن السيبراني لا يحمي فقط الأجهزة، بل يغير سلوك المستخدم ويجعله أكثر أمانًا في حياته الرقمية.</p>
-    </div>
+<!-- 4 -->
+<section>
+<h2>🎣 التصيد الاحتيالي</h2>
+<div class="box">
+<ul>
+<li>رسائل مزيفة</li>
+<li>روابط خطيرة</li>
+<li>سرقة كلمات المرور</li>
+<li>انتحال مواقع رسمية</li>
+<li>استهداف البريد الإلكتروني</li>
+<li>خداع المستخدم</li>
+<li>انتشار كبير</li>
+<li>يطلب معلومات حساسة</li>
+<li>يبدو حقيقيًا</li>
+<li>يمكن تجنبه بالحذر</li>
+</ul>
+</div>
 </section>
 
-<footer>
-    <p>إعداد الطالب: [عبدالله صالح الغامدي]</p>
-</footer>
+<!-- 5 -->
+<section>
+<h2>🦠 البرامج الخبيثة</h2>
+<div class="box">
+<ul>
+<li>فيروسات</li>
+<li>برامج تجسس</li>
+<li>تلف الملفات</li>
+<li>سرقة البيانات</li>
+<li>تبطئ الجهاز</li>
+<li>تنتشر عبر الإنترنت</li>
+<li>تدخل بدون إذن</li>
+<li>تشكل خطر كبير</li>
+<li>تحتاج برامج حماية</li>
+<li>يجب تحديث النظام</li>
+</ul>
+</div>
+</section>
+
+<!-- 6 -->
+<section>
+<h2>💰 هجمات الفدية</h2>
+<div class="box">
+<ul>
+<li>تشفير الملفات</li>
+<li>طلب المال</li>
+<li>استهداف الشركات</li>
+<li>خطر كبير</li>
+<li>انتشار واسع</li>
+<li>يصعب استرجاع البيانات</li>
+<li>يحتاج نسخ احتياطي</li>
+<li>يتم عبر روابط</li>
+<li>يستغل ضعف الحماية</li>
+<li>يمكن الوقاية منه</li>
+</ul>
+</div>
+</section>
+
+<!-- 7 -->
+<section>
+<h2>🧠 الهندسة الاجتماعية</h2>
+<div class="box">
+<ul>
+<li>خداع المستخدم</li>
+<li>استغلال الثقة</li>
+<li>انتحال شخصيات</li>
+<li>طلب معلومات</li>
+<li>تأثير نفسي</li>
+<li>خطير جدًا</li>
+<li>يحدث عبر الهاتف</li>
+<li>أو البريد</li>
+<li>يستهدف الجميع</li>
+<li>يحتاج وعي</li>
+</ul>
+</div>
+</section>
+
+<!-- 8 -->
+<section>
+<h2>🔑 كلمات المرور</h2>
+<div class="box">
+<ul>
+<li>كلمة قوية</li>
+<li>أحرف وأرقام</li>
+<li>رموز خاصة</li>
+<li>عدم التكرار</li>
+<li>تغيير دوري</li>
+<li>عدم المشاركة</li>
+<li>استخدام مدير كلمات مرور</li>
+<li>تجنب السهلة</li>
+<li>حماية الحساب</li>
+<li>أساس الأمان</li>
+</ul>
+</div>
+</section>
+
+<!-- 9 -->
+<section>
+<h2>📲 المصادقة الثنائية</h2>
+<div class="box">
+<ul>
+<li>حماية إضافية</li>
+<li>رمز للهاتف</li>
+<li>صعب الاختراق</li>
+<li>مهم جدًا</li>
+<li>يحمي الحسابات</li>
+<li>يمنع السرقة</li>
+<li>سهل التفعيل</li>
+<li>يستخدم في التطبيقات</li>
+<li>آمن</li>
+<li>ضروري</li>
+</ul>
+</div>
+</section>
+
+<!-- 10 -->
+<section>
+<h2>🌐 أمن الشبكات</h2>
+<div class="box">
+<ul>
+<li>تجنب Wi-Fi عام</li>
+<li>كلمة مرور للشبكة</li>
+<li>تشفير البيانات</li>
+<li>حماية الراوتر</li>
+<li>تحديث الشبكة</li>
+<li>عدم مشاركة الاتصال</li>
+<li>مراقبة الأجهزة</li>
+<li>استخدام VPN</li>
+<li>تقليل المخاطر</li>
+<li>حماية الاتصال</li>
+</ul>
+</div>
+</section>
+
+<!-- 11 -->
+<section>
+<h2>📱 أمن الجوال</h2>
+<div class="box">
+<ul>
+<li>تحديث النظام</li>
+<li>تحميل موثوق</li>
+<li>تجنب الروابط</li>
+<li>قفل الجهاز</li>
+<li>بصمة أو رمز</li>
+<li>حماية البيانات</li>
+<li>مكافحة الفيروسات</li>
+<li>نسخ احتياطي</li>
+<li>عدم كسر الحماية</li>
+<li>الحذر من التطبيقات</li>
+</ul>
+</div>
+</section>
+
+<!-- 12 -->
+<section>
+<h2>📸 مواقع التواصل</h2>
+<div class="box">
+<ul>
+<li>عدم نشر الموقع</li>
+<li>إعدادات الخصوصية</li>
+<li>تجنب الغرباء</li>
+<li>عدم مشاركة الصور الحساسة</li>
+<li>تفعيل الحماية</li>
+<li>عدم فتح روابط</li>
+<li>الحذر من الرسائل</li>
+<li>حماية الحساب</li>
+<li>تحديث التطبيقات</li>
+<li>وعي المستخدم</li>
+</ul>
+</div>
+</section>
+
+<!-- 13 -->
+<section>
+<h2>💾 حماية البيانات</h2>
+<div class="box">
+<ul>
+<li>نسخ احتياطي</li>
+<li>حفظ آمن</li>
+<li>تشفير الملفات</li>
+<li>حماية الأجهزة</li>
+<li>كلمات مرور</li>
+<li>عدم المشاركة</li>
+<li>تحديث دائم</li>
+<li>استخدام سحابة</li>
+<li>تجنب الفيروسات</li>
+<li>حماية كاملة</li>
+</ul>
+</div>
+</section>
+
+</div>
+
+<!-- الصفحة الأخيرة -->
+<div class="final">
+    <div class="student">
+        عمل الطالب: عبدالله صالح الغامدي<br><br>
+        شعبة : 12
+    </div>
+</div>
 
 </body>
 </html>
